@@ -1,24 +1,56 @@
-# README
+Culinary Based Travel App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[x] Models
+[x] Databases
+[] Migrate
+[] Seed Data
+[] Views
 
-Things you may want to cover:
+Users
+    Has many trips
+    Has many destinations, through trips
+    Has many flights, through trips
+    Has many accommodations, through trips
 
-* Ruby version
+    name - string
+    email - string
+    encrypted_password - string
+    salt - string
 
-* System dependencies
+Trips
+    Belongs to user
+    Belongs to accomodation
+    Belongs to destination
+    Belongs to flight
 
-* Configuration
+    user_id - integer
+    accomodation_id - integer
+    destination_id - integer
+    flight_id - integer
 
-* Database creation
+Accommodations
+    Has many trips
+    Has many users, through trips
 
-* Database initialization
+    name - string
+    description - text
+    cost - integer
+    img_url - string
 
-* How to run the test suite
+FlightClasses
+    Has many trips
+    Has many users, through trips
 
-* Services (job queues, cache servers, search engines, etc.)
+    name - string
+    description - text
+    cost - integer
+    img_url - string
 
-* Deployment instructions
+Destinations
+    Has many trips
+    Has many users, through trips
 
-* ...
+    name - string
+    description - text
+    cost - integer
+    img_url - string
