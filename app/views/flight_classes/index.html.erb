@@ -1,0 +1,12 @@
+<h1>Flight Tier Options</h1>
+
+<% @flights.each do |flight| %>
+    <div class="card">
+        <img style="max-width: 350px; width: 100%;" src=" <%= flight.img_url %> " alt=" <%= flight.name %> ">
+        <h2> <%= flight.name %> </h2>
+        <ul>
+            <li><strong>Cost:</strong> <%= flight.cost %> </li>
+        </ul>
+        <p> <%= flight.description %> </p>
+    </div>
+<% end %>

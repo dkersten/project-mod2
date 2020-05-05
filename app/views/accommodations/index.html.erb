@@ -1,0 +1,12 @@
+<h1>Accommodation Tier Options</h1>
+
+<% @accommodations.each do |acc| %>
+    <div class="card">
+        <img style="max-width: 350px; width: 100%;" src=" <%= acc.img_url %> " alt=" <%= acc.name %> ">
+        <h2> <%= acc.name %> </h2>
+        <ul>
+            <li><strong>Cost:</strong> <%= acc.cost %> </li>
+        </ul>
+        <p> <%= acc.description %> </p>
+    </div>
+<% end %>
