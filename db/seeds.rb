@@ -9,12 +9,15 @@
 require 'faker'
 
 User.destroy_all
+Destination.destroy_all
 Accommodation.destroy_all
 FlightClass.destroy_all
-Destination.destroy_all
 
 Trip.destroy_all
 
+# seeds
+
+10.times { User.create(name: Faker::FunnyName.name, email: Faker::Internet.email)}
 
 Destination.create(city: "Bologna", country: "Italy", cuisine: "Pasta", cost: 3000, img_url: "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80")
 Destination.create(city: "Lyon", country: "France", cuisine: "Bread and Pastries", cost: 4000, img_url: "https://images.unsplash.com/photo-1568471173242-461f0a730452?ixlib=rb-1.2.1&auto=format&fit=crop&w=2530&q=80")
@@ -22,4 +25,15 @@ Destination.create(city: "Tokyo", country: "Japan", cuisine: "Sushi and Sashimi"
 Destination.create(city: "Kansas City", country: "USA", cuisine: "Barbecue", cost: 2500, img_url: "https://images.unsplash.com/photo-1523986490752-c28064f26be3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80")
 Destination.create(city: "Mexico City", country: "Mexico", cuisine: "Tacos", cost: 2800, img_url: "https://images.unsplash.com/photo-1579888944880-d98341245702?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80")
 
-10.times { User.create(name: Faker::FunnyName.name, email: Faker::Internet.email)}
+Accommodation.create(name: , description: , cost: , img_url: )
+Accommodation.create(name: , description: , cost: , img_url: )
+Accommodation.create(name: , description: , cost: , img_url: )
+
+FlightClass.create(name: , description: , cost: , img_url: )
+FlightClass.create(name: , description: , cost: , img_url: )
+FlightClass.create(name: , description: , cost: , img_url: )
+FlightClass.create(name: , description: , cost: , img_url: )
+
+40.times { Trip.create(user_id: , accommodation_id: , destination_id:, flight_class_id: )
+
+
