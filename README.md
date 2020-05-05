@@ -3,7 +3,7 @@ Culinary Based Travel App
 [x] Models
 [x] Databases
 [x] Migrate
-[] Seed Data
+[x] Seed Data
 [] Views
 
 Users

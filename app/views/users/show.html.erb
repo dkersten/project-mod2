@@ -1,0 +1,14 @@
+<h1><%= @user.name %></h1>
+
+<h2>Trips:</h2>
+
+<% @user.trips.each do |trip| %>
+<div class="card">
+  <img style="max-width: 350px; width: 100%" src="<%= trip.destination.img_url %>" alt="<%= trip.destination.city %>, <%= trip.destination.country %>">
+
+  <%= trip.destination.city %>, <%= trip.destination.country %>
+  <button>Trip Details</button>
+</div>
+<% end %>
+
+
