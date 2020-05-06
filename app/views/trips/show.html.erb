@@ -20,5 +20,7 @@
       </div>
     </div>
     <%= link_to "Edit Trip Details", edit_trip_path(@trip) %>
+
+    <%= button_to "Delete Trip", trip_path(@trip), method: :delete %>
   </div>
 </main>

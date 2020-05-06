@@ -27,8 +27,15 @@ class TripsController < ApplicationController
   end
 
   def update
-    trip = Trip.update(trip_params)
+    trip = Trip.find(params[:id])
+    trip.update(trip_params)
     redirect_to trip_path(trip)
+  end
+
+  def destroy
+    trip = Trip.find(params[:id])
+    trip.destroy
+    redirect_to user_path(trip.user.id)
   end
 
   private

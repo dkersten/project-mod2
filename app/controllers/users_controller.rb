@@ -8,4 +8,21 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def new
+    @user = User.find(params[:id])
+  end
+
+  def create
+    byebug
+    user = User.find(params[:id])
+    
+    # user.
+  end
+
+  private
+
+    def user_params
+      params.require(:users)
+    end
+
 end
