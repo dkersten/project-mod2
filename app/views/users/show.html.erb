@@ -7,7 +7,7 @@
   <img style="max-width: 350px; width: 100%" src="<%= trip.destination.img_url %>" alt="<%= trip.destination.city %>, <%= trip.destination.country %>">
 
   <%= trip.destination.city %>, <%= trip.destination.country %>
-  <button>Trip Details</button>
+  <%= link_to "Trip Details", trip_path(trip) %>
 </div>
 <% end %>
 

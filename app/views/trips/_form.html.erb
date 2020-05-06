@@ -1,0 +1,11 @@
+<%= form_for @trip do |f| %>
+  <%= f.label :user_id %>
+  <%= f.collection_select :user_id, @users, :id, :name %>
+  <%= f.label :destination_id %>
+  <%= f.collection_select :destination_id, @destinations, :id, :city_country %>
+  <%= f.label :flight_class_id %>
+  <%= f.collection_select :flight_class_id, @flights, :id, :name %>
+  <%= f.label :accommodation_id %>
+  <%= f.collection_select :accommodation_id, @accommodations, :id, :name %>
+  <%= f.submit %>
+<% end %>
