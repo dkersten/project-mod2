@@ -1,3 +1,56 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+main.user-show {
+
+    h1 {
+        margin-bottom: 2.5rem;
+        padding: 1.25rem .75rem 2.5rem;
+        font-size: 2.5rem;
+        color: #2f2f2f;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2.25rem;
+        color: #2f2f2f;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: calc(33.333% - 2rem);
+
+        .card {
+            margin: 2rem, 1rem;
+        }
+
+        .card img {
+            max-width: 100%;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            color: #2f2f2f
+        }
+
+        .card a {
+            display: block;
+            padding: 1rem 2.5rem;
+            background: #0c1624;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+            color: #f7f7f7;
+            text-decoration: none;
+            transition: all .3s ease-in-out;
+    
+            &:hover {
+                background: #1d3557;
+            }
+        }
+    }
+}

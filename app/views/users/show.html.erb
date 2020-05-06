@@ -1,14 +1,16 @@
-<h1><%= @user.name %></h1>
+<main class="user-show">
+  <h1>Hello <%= @user.name %>!</h1>
 
-<h2>Trips:</h2>
+  <h2>Your Trips:</h2>
 
-<% @user.trips.each do |trip| %>
-<div class="card">
-  <img style="max-width: 350px; width: 100%" src="<%= trip.destination.img_url %>" alt="<%= trip.destination.city %>, <%= trip.destination.country %>">
+<div class="card-container">
+  <% @user.trips.each do |trip| %>
+    <div class="card">
+      <img src="<%= trip.destination.img_url %>" alt="<%= trip.destination.city %>, <%= trip.destination.country %>">
 
-  <%= trip.destination.city %>, <%= trip.destination.country %>
-  <%= link_to "Trip Details", trip_path(trip) %>
-</div>
-<% end %>
-
-
+      <h3><%= trip.destination.city %>, <%= trip.destination.country %></h3>
+      <%= link_to "Trip Details", trip_path(trip) %>
+    </div>
+  <% end %>
+  </div>
+</main>

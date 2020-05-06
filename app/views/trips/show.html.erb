@@ -1,24 +1,24 @@
-<main class="trip">
+<main class="trip-show">
   <div class="container">
     <h1><%= @trip.destination.city_country %></h1>
-    <h2>Total Trip Cost: <%= @trip.cost %></h2>
+    <h2>Total Trip Cost: $<%= @trip.cost %></h2>
     <div class="card-container">
       <div class="card">
-        <h3>Learn to make:<%= @trip.destination.cuisine %></h3>
         <img src="<%= @trip.destination.img_url %>" alt="<%= @trip.destination.cuisine %>">
-        <p><%= @trip.destination.cost %></p>
+        <h3>Learn to make: <%= @trip.destination.cuisine %></h3>
+        <p>$<%= @trip.destination.cost %></p>
       </div>
       <div class="card">
-        <h3>Accomodation Tier: <%= @trip.accommodation.name %></h3>
         <img src="<%= @trip.accommodation.img_url %>" alt="<%= @trip.accommodation.name %>">
-        <p><%= @trip.accommodation.cost %></p>
+        <h3>Accomodation Tier: <%= @trip.accommodation.name %></h3>
+        <p>$<%= @trip.accommodation.cost %></p>
       </div>
       <div class="card">
-        <h3>Flight Class: <%= @trip.flight_class.name %></h3>
         <img src="<%= @trip.flight_class.img_url %>" alt="<%= @trip.flight_class.name %>">
-        <p><%= @trip.flight_class.cost %></p>
-        <%= link_to "Edit Trip Details", edit_trip_path(@trip) %>
+        <h3>Flight Class: <%= @trip.flight_class.name %></h3>
+        <p>$<%= @trip.flight_class.cost %></p>
       </div>
     </div>
+    <%= link_to "Edit Trip Details", edit_trip_path(@trip) %>
   </div>
 </main>

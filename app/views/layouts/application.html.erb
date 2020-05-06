@@ -10,10 +10,12 @@
     <script src="https://kit.fontawesome.com/05cb685f53.js" crossorigin="anonymous"></script>
   </head>
   <nav>
-    <a class="logo" href="#"><i class="fad fa-plane"></i></a>
-    <a class="hover-state" href="#">Profile</a>
-    <a class="hover-state" href="<%= destinations_path %>">Destinations</a>
-    <a class="hover-state" href="#">Login</a>
+    <div class="inner-nav">
+      <a class="logo" href="#"><i class="fad fa-plane"></i></a>
+      <a class="hover-state" href="#">Profile</a>
+      <a class="hover-state" href="<%= destinations_path %>">Destinations</a>
+      <a class="hover-state" href="#">Login</a>
+    </div>
   </nav>
   <body>
     <%= yield %>

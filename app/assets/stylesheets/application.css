@@ -63,9 +63,16 @@ table {
 /* End CSS Reset */
 nav {
     background: linear-gradient(to bottom right, #0c1624, #1d3557);
+    
+    padding: 1rem;
+}
+
+.inner-nav {
     display: flex;
     align-items: stretch;
-    padding: 1rem;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav a {
@@ -77,6 +84,7 @@ nav a.hover-state {
     padding: 1.2rem;
     margin-top: .4rem;
     font-size: 1.25rem;
+    transition: all .3s ease-in-out;
 }
 
 nav a.hover-state:hover {
