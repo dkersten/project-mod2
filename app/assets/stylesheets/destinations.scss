@@ -1,3 +1,97 @@
 // Place all the styles related to the Destinations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+main {
+    width: 98%;
+    max-width: 1300px;
+    // background: red;
+    margin: 2rem auto;
+
+}
+
+main.index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+main.show {
+    background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url(https://images.unsplash.com/photo-1532223582-e5bcb10301d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80);
+    background-size: cover;
+    max-width: 100%;
+    width: 100%;
+    margin-top: 0;
+
+    .container {
+        margin: auto;
+        max-width: 1200px;
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+
+    >* {
+        color: #f7f7f7;
+        text-shadow: 1px 1px 3px #000;
+    }
+
+    .tagline {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 2.5rem .5rem 2.25rem;
+        position: relative;
+
+        &::after {
+            height: 2px;
+            background: #f7f7f7;
+            width: 15%;
+            position: absolute;
+            left: calc( 85% /2 );
+            bottom: 0;
+            content: '';
+        }
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        padding: 1.25rem .75rem 2.5rem;
+        font-size: 5rem;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 1rem;
+    align-items: center;
+    background: #eeeeee;
+    box-shadow: 2px 8px 10px rgba(0,0,0, .2);
+    flex-basis: calc( 33.333% - 2rem);
+
+    img {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: #2f2f2f
+    }
+
+    a {
+        display: block;
+        padding: 1rem 2.5rem;
+        background: #0c1624;
+        margin-bottom: 1.5rem;
+        border-radius: 5px;
+        color: #f7f7f7;
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background: #1d3557;
+        }
+    }
+}

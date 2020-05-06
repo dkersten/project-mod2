@@ -1,8 +1,9 @@
-<% @destinations.each do |destination| %>
-    <div class="card">
-        <img style="max-width: 350px; width: 100%;" src="<%= destination.img_url %>">
-        <h2><%= destination.city %>, <%= destination.country %></h2>
-        <%= link_to 'View Destination', destination_path(destination) %>
-    </div>
-    <h2><%= destination.city %>, <%= destination.country %></h2>
-<% end %>
+<main class="index">
+    <% @destinations.each do |destination| %>
+        <div class="card">
+            <img alt="<%= destination.city %>, <%= destination.country %>" src="<%= destination.img_url %>">
+            <h2><%= destination.city %>, <%= destination.country %></h2>
+            <%= link_to 'View Destination', destination_path(destination) %>
+        </div>
+    <% end %>
+</main>

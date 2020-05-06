@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TastyTravel</title>
+    <title>Tasty Travel</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/05cb685f53.js" crossorigin="anonymous"></script>
   </head>
-
+  <nav>
+    <a class="logo" href="#"><i class="fad fa-plane"></i></a>
+    <a class="hover-state" href="#">Profile</a>
+    <a class="hover-state" href="<%= destinations_path %>">Destinations</a>
+    <a class="hover-state" href="#">Login</a>
+  </nav>
   <body>
     <%= yield %>
   </body>
