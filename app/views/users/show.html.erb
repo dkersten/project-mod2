@@ -1,6 +1,8 @@
 <main class="user-show">
   <h1>Hello <%= @user.name %>!</h1>
 
+  <%= link_to 'Create a Trip', new_trip_path %>
+
   <h2>Your Trips:</h2>
 
 <div class="card-container">
@@ -13,5 +15,6 @@
     </div>
   <% end %>
   </div>
+  
   <%= button_to "Delete Account", user_path(@user), method: :delete %>
 </main>

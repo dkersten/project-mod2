@@ -1,6 +1,7 @@
 <%= form_for @trip do |f| %>
-  <%= f.label :user_id %>
-  <%= f.collection_select :user_id, @users, :id, :name %>
+
+  <%= f.hidden_field :user_id, :value => @current_user.id %>
+
   <%= f.label :destination_id %>
   <%= f.collection_select :destination_id, @destinations, :id, :city_country %>
   <%= f.label :flight_class_id %>

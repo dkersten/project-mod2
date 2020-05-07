@@ -6,6 +6,7 @@
   <% end %>
 <% end %>
 
+<!-- Sign up form -->
 <%= form_for @user do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -20,4 +21,22 @@
     <br><br>
 
     <%= f.submit %>
+
+<% end %>
+
+<% if flash[:err] %>
+    <span> <%= flash[:err] %> </span>
+<% end %>
+
+<!-- Sign in form -->
+<%= form_for :session, url: new_login_path do |f|  %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <br><br>
+
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br><br>
+
+    <%= f.submit "Login" %>
 <% end %>
