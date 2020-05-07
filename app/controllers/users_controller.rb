@@ -13,16 +13,27 @@ class UsersController < ApplicationController
   end
 
   def create
-    byebug
-    user = User.find(params[:id])
+    @user = User.create(user_params)
     
-    # user.
+    if @user.valid?
+      redirect_to user_path(@user)
+    else
+      flash[:errors] = @user.errors.full_messages
+      redirect_to "/"
+    end
+
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to "/"
   end
 
   private
 
-    def user_params
-      params.require(:users)
-    end
+  def user_params
+    params.require(:user).permit(:name, :email, :password)
+  end
 
 end
