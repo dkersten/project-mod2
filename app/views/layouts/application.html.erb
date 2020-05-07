@@ -13,6 +13,9 @@
     <div class="inner-nav">
       <a class="logo" href="/"><i class="fad fa-plane"></i></a>
       <% if @current_user %>
+        <a class="hover-state" href="<%= new_trip_path %>">Create a Trip</a>
+      <% end %>
+      <% if @current_user %>
         <a class="hover-state" href="<%= user_path(@current_user) %>">Profile</a>
       <% end %>
       <a class="hover-state" href="<%= destinations_path %>">Destinations</a>

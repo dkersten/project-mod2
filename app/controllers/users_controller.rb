@@ -1,11 +1,19 @@
 class UsersController < ApplicationController
 
+  skip_before_action :authenticate_user, only: [:new, :create, :show]
+
   def index
     @users = User.all
   end
   
   def show
     @user = User.find(params[:id])
+    
+    if @user.id == @current_user.id
+      render :show
+    else
+      redirect_to user_path(@current_user)
+    end
   end
 
   def new
@@ -14,7 +22,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    
+    session[:user_id] = @user.id
+
     if @user.valid?
       redirect_to user_path(@user)
     else
