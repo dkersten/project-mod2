@@ -8,5 +8,11 @@
             <li><strong>Cost:</strong> <%= acc.cost %> </li>
         </ul>
         <p> <%= acc.description %> </p>
+
+        <%= form_for :trip_params, url: "/sessions/add_accommodation" do |f| %>
+          <%= f.hidden_field :accommodation_id, value: acc.id %>
+          <%= f.submit "Add to Cart" %>
+        <% end %>
+
     </div>
 <% end %>

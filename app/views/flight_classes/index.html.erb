@@ -8,5 +8,11 @@
             <li><strong>Cost:</strong> <%= flight.cost %> </li>
         </ul>
         <p> <%= flight.description %> </p>
+        
+        <%= form_for :trip_params, url: "/sessions/add_flight" do |f| %>
+        <%= f.hidden_field :flight_id, value: flight.id %>
+        <%= f.submit "Add to Cart" %>
+        <% end %>
+
     </div>
 <% end %>

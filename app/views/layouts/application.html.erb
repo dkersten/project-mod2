@@ -13,6 +13,7 @@
     <div class="inner-nav">
       <a class="logo" href="/"><i class="fad fa-plane"></i></a>
       <% if @current_user %>
+      <span>Welcome <%= @current_user.name %></span>
         <a class="hover-state" href="<%= new_trip_path %>">Create a Trip</a>
       <% end %>
       <% if @current_user %>
@@ -20,7 +21,7 @@
       <% end %>
       <a class="hover-state" href="<%= destinations_path %>">Destinations</a>
       <% if @current_user %>
-      <span>Welcome <%= @current_user.name %></span>
+      <a class="hover-state" href="<%= cart_path %>">Cart</a>
           <a class="hover-state" href="<%= log_out_session_path %>">Log Out</a>
         <% else %>
           <a class="hover-state" href="/">Login</a>

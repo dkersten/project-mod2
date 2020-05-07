@@ -19,9 +19,6 @@ Trip.destroy_all
 
 10.times { User.create(name: Faker::FunnyName.name, email: Faker::Internet.email, password_digest: Faker::Internet.password) }
 
-# User.create(name: "Jim Duggins", email: "talnescdfs@mfke.com", password_digest: "askdjasd3423")
-# User.create(name: "John Hashtag", email: "dfjkwejr@kjdf.com", password_digest: "askdjasd3423")
-
 
 Destination.create(city: "Bologna", country: "Italy", cuisine: "Pasta", cost: 3000, img_url: "https://images.unsplash.com/photo-1498579150354-977475b7ea0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed mauris dignissim sem efficitur congue. Curabitur ipsum dolor, ultrices nec velit sed, sagittis pellentesque est. Pellentesque dignissim facilisis sem, quis condimentum ex sollicitudin quis. Vivamus vitae augue massa. In in accumsan mi. Maecenas porttitor enim ut lorem vulputate, placerat porta lacus semper. Aliquam auctor mollis orci et placerat.")
 Destination.create(city: "Lyon", country: "France", cuisine: "Bread and Pastries", cost: 4000, img_url: "https://images.unsplash.com/photo-1568471173242-461f0a730452?ixlib=rb-1.2.1&auto=format&fit=crop&w=2530&q=80", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed mauris dignissim sem efficitur congue. Curabitur ipsum dolor, ultrices nec velit sed, sagittis pellentesque est. Pellentesque dignissim facilisis sem, quis condimentum ex sollicitudin quis. Vivamus vitae augue massa. In in accumsan mi. Maecenas porttitor enim ut lorem vulputate, placerat porta lacus semper. Aliquam auctor mollis orci et placerat.")
