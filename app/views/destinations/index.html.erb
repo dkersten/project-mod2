@@ -3,12 +3,16 @@
         <div class="card">
             <img alt="<%= destination.city %>, <%= destination.country %>" src="<%= destination.img_url %>">
             <h2><%= destination.city %>, <%= destination.country %></h2>
-            <%= link_to 'View Destination', destination_path(destination) %>
+            <div class="btn-container">
+                <%= link_to 'View Destination', destination_path(destination) %>
 
-            <%= form_for :trip_params, url: "/sessions/add_destination" do |f| %>
-              <%= f.hidden_field :destination_id, value: destination.id %>
-              <%= f.submit "Add to Cart" %>
-            <% end %>
+                <% if @current_user %>
+                    <%= form_for :trip_params, url: "/sessions/add_destination" do |f| %>
+                    <%= f.hidden_field :destination_id, value: destination.id %>
+                    <%= f.submit "Add to Cart" %>
+                    <% end %>
+                <% end %>
+            </div>
 
         </div>
         

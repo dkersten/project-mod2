@@ -15,6 +15,9 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.create(trip_params)
     #byebug
+    session[:destination_id] = nil
+    session[:accommodation_id] = nil
+    session[:flight_id] = nil
     redirect_to user_path(@trip.user)
   end
 

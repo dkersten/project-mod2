@@ -1,24 +1,32 @@
-<main class="show">
+<main class="show" style="background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url( <%= @destination.bg_img_url %> );" >
     <div class="container">
         <div class="tagline">Eat and learn to make <%= @destination.cuisine %> in...</div>
         <h1> <%= @destination.city %>, <%= @destination.country %> </h1>
         <div id="ImageGallery">
             <div class="row">
                 <figure>
-                    <img src="<%= @destination.img_url %>" alt="Typical cuisine found in <%= @destination.city %>, <%= @destination.country %>" width="304" height="228">
+                    <img src="<%= @destination.img_url2 %>" alt="Typical cuisine found in <%= @destination.city %>, <%= @destination.country %>" >
                     <figcaption>Food in <%= @destination.city %>, <%= @destination.country %></figcaption>
                 </figure>
                 <figure>
-                    <img src="<%= @destination.img_url %>" alt="Typical cuisine found in <%= @destination.city %>, <%= @destination.country %>" width="304" height="228">
+                    <img src="<%= @destination.img_url %>" alt="Typical cuisine found in <%= @destination.city %>, <%= @destination.country %>" >
                     <figcaption>Food in <%= @destination.city %>, <%= @destination.country %></figcaption>
                 </figure>
                 <figure>
-                    <img src="<%= @destination.img_url %>" alt="Typical cuisine found in <%= @destination.city %>, <%= @destination.country %>" width="304" height="228">
+                    <img src="<%= @destination.img_url3 %>" alt="Typical cuisine found in <%= @destination.city %>, <%= @destination.country %>" >
                     <figcaption>Food in <%= @destination.city %>, <%= @destination.country %></figcaption>
                 </figure>
             </div>
         </div>
         <h3> <%= @destination.cuisine %> </h3>
         <p> <%= @destination.description %> </p>
+
+        <% if @current_user %>
+            <%= form_for :trip_params, url: "/sessions/add_destination" do |f| %>
+            <%= f.hidden_field :destination_id, value: @destination.id %>
+            <%= f.submit "Add to Cart" %>
+            <% end %>
+        <% end %>
+
     </div>
 </main>

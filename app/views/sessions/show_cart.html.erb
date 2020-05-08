@@ -1,44 +1,56 @@
-<h1><%= @current_user.name %>'s cart:</h1>
-<br/>
+<main class="cart">
+  <h1><%= @current_user.name %>'s cart:</h1>
 
-<% if session[:destination_id] %>
-  <% @destination = Destination.find(session[:destination_id]) %>
-  <p><%= @destination.city_country %> - $<%= @destination.cost %></p>
-  <%= link_to "Edit Destination", destinations_path %> 
-<% else %>
-  <h2><%= link_to "Choose A Destination", destinations_path %></h2>
-<% end %>  
+  <div class="cart-container">
+  
+    <div class="cart-item">
 
-<br/>
+      <% if session[:destination_id] %>
+        <% @destination = Destination.find(session[:destination_id]) %>
+        <img src="<%= @destination.img_url %>" alt="Typical food from <%= @destination.city_country %>">
+        <p><%= @destination.city_country %> - $<%= @destination.cost %></p>
+        <%= link_to "Edit Destination", destinations_path %> 
+      <% else %>
+        <h2><%= link_to "Choose A Destination", destinations_path %></h2>
+      <% end %>
+    </div>
 
-<% if session[:accommodation_id] %>
-  <% @accommodation = Accommodation.find(session[:accommodation_id]) %>
-  <p><%= @accommodation.name %> - $<%= @accommodation.cost %></p>
-  <%= link_to "Edit Accommodation", accommodations_path %> 
-<% else %>
-  <h2><%= link_to "Choose Accommodations", accommodations_path %></h2>
-<% end %>
+    <div class="cart-item">
+      <% if session[:accommodation_id] %>
+        <% @accommodation = Accommodation.find(session[:accommodation_id]) %>
+        <img src="<%= @accommodation.img_url %>" alt="Hotel Tier: <%= @accommodation.name %>">
+        <p><%= @accommodation.name %> - $<%= @accommodation.cost %></p>
+        <%= link_to "Edit Accommodation", accommodations_path %> 
+      <% else %>
+        <h2><%= link_to "Choose Accommodations", accommodations_path %></h2>
+      <% end %>
+    </div>
 
-<br/>
+    <div class="cart-item">
+      <% if session[:flight_id] %>
+        <% @flight = FlightClass.find(session[:flight_id]) %>
+        <img src="<%= @flight.img_url %>" alt="Flight tier: <%= @flight.name %>">
+        <p><%= @flight.name %> - $<%= @flight.cost %></p>
+        <%= link_to "Edit Flight", flights_path %> 
+      <% else %>
+        <h2><%= link_to "Choose a Flight Class", flights_path %></h2>
+      <% end %>
+    </div>
 
-<% if session[:flight_id] %>
-  <% @flight = FlightClass.find(session[:flight_id]) %>
-  <p><%= @flight.name %> - $<%= @flight.cost %></p>
-  <%= link_to "Edit Flight", flights_path %> 
-<% else %>
-  <h2><%= link_to "Choose a Flight Class", flights_path %></h2>
-<% end %>
-<br/>
-<% if session[:flight_id] && session[:accommodation_id] && session[:destination_id] %>
-  <p style="margin-top: 1.5rem;">Trip Cost: $<%= [@flight.cost.to_i, @accommodation.cost.to_i, @destination.cost.to_i].sum %></p>
-  <p>Purchase Trip:</p>
+  </div>
 
-  <%= form_for :trip, url: "/trips" do |f| %>
-    <%= f.hidden_field :user_id, :value => @current_user.id %>
-    <%= f.hidden_field :flight_class_id, :value => @flight.id %>
-    <%= f.hidden_field :accommodation_id, :value => @accommodation.id %>
-    <%= f.hidden_field :destination_id, :value => @destination.id %>
-    <%= f.submit %>
-  <% end %>
+  <% if session[:flight_id] && session[:accommodation_id] && session[:destination_id] %>
+      <div class="checkout-container">
+        <p>Trip Cost: <span>$<%= [@flight.cost.to_i, @accommodation.cost.to_i, @destination.cost.to_i].sum %></span></p>
 
-<% end %>
+        <%= form_for :trip, url: "/trips" do |f| %>
+          <%= f.hidden_field :user_id, :value => @current_user.id %>
+          <%= f.hidden_field :flight_class_id, :value => @flight.id %>
+          <%= f.hidden_field :accommodation_id, :value => @accommodation.id %>
+          <%= f.hidden_field :destination_id, :value => @destination.id %>
+          <%= f.submit "Purchase" %>
+        <% end %>
+      </div>
+    <% end %>
+
+</main>

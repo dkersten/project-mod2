@@ -1,18 +1,24 @@
-<h1>Flight Tier Options</h1>
+<main class="index">
+    <h1>Flight Tier Options</h1>
 
-<% @flights.each do |flight| %>
-    <div class="card">
-        <img style="max-width: 350px; width: 100%;" src=" <%= flight.img_url %> " alt=" <%= flight.name %> ">
-        <h2> <%= flight.name %> </h2>
-        <ul>
-            <li><strong>Cost:</strong> <%= flight.cost %> </li>
-        </ul>
-        <p> <%= flight.description %> </p>
-        
-        <%= form_for :trip_params, url: "/sessions/add_flight" do |f| %>
-        <%= f.hidden_field :flight_id, value: flight.id %>
-        <%= f.submit "Add to Cart" %>
+    <div class="card-container">
+        <% @flights.each do |flight| %>
+            <div class="card">
+                <img src=" <%= flight.img_url %> " alt=" <%= flight.name %> ">
+                <h2>Flight Tier: <%= flight.name %> </h2>
+                <ul>
+                    <li><strong>Cost:</strong> $<%= flight.cost %> </li>
+                </ul>
+                <p> <%= flight.description %> </p>
+                
+                <% if @current_user %>
+                    <%= form_for :trip_params, url: "/sessions/add_flight" do |f| %>
+                    <%= f.hidden_field :flight_id, value: flight.id %>
+                    <%= f.submit "Add to Cart" %>
+                    <% end %>
+                <% end %>
+
+            </div>
         <% end %>
-
     </div>
-<% end %>
+</main>

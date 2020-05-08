@@ -8,12 +8,14 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/05cb685f53.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
   </head>
   <nav>
     <div class="inner-nav">
+      <span>Tasty Tours</span>
       <a class="logo" href="/"><i class="fad fa-plane"></i></a>
       <% if @current_user %>
-      <span>Welcome <%= @current_user.name %></span>
+      <span>Welcome <%= @current_user.name %>!</span>
         <a class="hover-state" href="<%= new_trip_path %>">Create a Trip</a>
       <% end %>
       <% if @current_user %>
@@ -21,6 +23,8 @@
       <% end %>
       <a class="hover-state" href="<%= destinations_path %>">Destinations</a>
       <% if @current_user %>
+      <a class="hover-state" href="<%= flight_classes_path %>">Flights</a>
+      <a class="hover-state" href="<%= accommodations_path %>">Accommodations</a>
       <a class="hover-state" href="<%= cart_path %>">Cart</a>
           <a class="hover-state" href="<%= log_out_session_path %>">Log Out</a>
         <% else %>

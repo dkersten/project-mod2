@@ -2,11 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+body {
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/brilliant.png");
+}
+
 main {
     width: 98%;
     max-width: 1300px;
     // background: red;
-    margin: 2rem auto;
+    margin: 2rem auto 0;
 
 }
 
@@ -14,10 +19,34 @@ main.index {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+
+    .btn-container {
+        // display: flex;
+        // justify-content: space-around;
+
+        input[type="submit"] {
+            display: block;
+            padding: 1rem 2.5rem;
+            background: #e63946;
+            margin-bottom: 1.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+            color: #f7f7f7;
+            text-decoration: none;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                background: #e11c2b;
+                cursor: pointer;
+            }
+            
+        }
+    }
 }
 
 main.show {
-    background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)), url(https://images.unsplash.com/photo-1532223582-e5bcb10301d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80);
+    
     background-size: cover;
     max-width: 100%;
     width: 100%;
@@ -76,6 +105,27 @@ main.show {
         font-size: 1.15rem;
         line-height: 1.7;
     }
+
+    form {
+        padding-bottom: 2rem;
+    }
+
+    input[type="submit"] {
+        display: block;
+        padding: 1rem 2.5rem;
+        background: #e63946;
+        margin: -1.5rem auto 1.5rem;
+        margin-right: auto;
+        border-radius: 5px;
+        color: #f7f7f7;
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background: #e11c2b;
+            cursor: pointer;
+        }
+    }
 }
 
 .card {
@@ -84,7 +134,7 @@ main.show {
     margin: 2rem 1rem;
     align-items: center;
     background: #eeeeee;
-    box-shadow: 2px 8px 10px rgba(0,0,0, .2);
+    box-shadow: 4px 10px 9px rgba(0,0,0, .22);
     flex-basis: calc( 33.333% - 2rem);
 
     img {
@@ -134,13 +184,13 @@ div#ImageGallery figure {
     }
   }
   div#ImageGallery div > figure:first-child {
-      transform: rotate(-6deg);
+      transform: rotate(-5deg);
   }
   div#ImageGallery div > figure:last-child {
-      transform: rotate(6deg);
+      transform: rotate(5deg);
   }
   div#ImageGallery figure img {
-   border-radius: 2px;
+   border-radius: 3px;
   }
   div#ImageGallery figcaption {
    color: #2f2f2f;

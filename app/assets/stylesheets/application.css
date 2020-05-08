@@ -75,6 +75,13 @@ nav {
     margin-right: auto;
 }
 
+nav span {
+    color: #e63946;
+    padding: 1.2rem;
+    margin-top: .4rem;
+    font-size: 1.25rem;
+}
+
 nav a {
     color: #f7f7f7;
     text-decoration: none;
@@ -98,4 +105,88 @@ nav a.logo {
 
 nav i {
     font-size: 4.5rem
+}
+
+/* Document Wide Styling */
+
+h1, h2, h3 {
+    font-family: 'Arvo', serif;
+}
+
+p, a, span, div, button {
+    font-family: 'Lato', sans-serif;
+}
+
+main.cart h1 {
+
+        margin-bottom: 2.5rem;
+        padding: 1.25rem .75rem 2.5rem;
+        font-size: 2.5rem;
+        color: #2f2f2f;
+        text-align: center;
+}
+
+main.cart .cart-container {
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main.cart .cart-container .cart-item {
+    /* background: green; */
+    padding: 2.5rem 1.5rem;
+    border-bottom: 1px solid #cecece;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main.cart .cart-container .cart-item img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+main.cart .checkout-container {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main.cart div.checkout-container > * {
+    text-align: center;
+}
+
+main.cart .checkout-container p {
+    font-size: 2rem;
+    color: #2f2f2f;
+    margin-bottom: 2rem;
+}
+
+main.cart .checkout-container p span {
+    color: #e63946;
+}
+
+main.cart .checkout-container input[type="submit"] {
+    display: block;
+    padding: 1rem 2.5rem;
+    font-size: 1.15rem;
+    background: #e63946;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    color: #f7f7f7;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+main.cart .checkout-container input[type="submit"]:hover {
+    background: #e11c2b;
+    cursor: pointer;
 }

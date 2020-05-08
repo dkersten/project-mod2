@@ -1,3 +1,55 @@
 // Place all the styles related to the Accommodations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+main.index {
+
+    display: block !important;
+
+    h1 {
+        margin-bottom: 2.5rem;
+        padding: 1.25rem .75rem 2.5rem;
+        font-size: 2.5rem;
+        color: #2f2f2f;
+        text-align: center;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-basis: calc(33.333% - 2rem);
+
+        .card p {
+            margin-top: 1.5rem;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .card * {
+            color: #2f2f2f;
+        }
+    }
+
+    input[type="submit"] {
+        display: block;
+        padding: 1rem 2.5rem;
+        background: #e63946;
+        margin: 1.5rem auto 1.5rem;
+        margin-right: auto;
+        border-radius: 5px;
+        color: #f7f7f7 !important;
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+        font-size: 1.15rem;
+
+        &:hover {
+            background: #e11c2b;
+            cursor: pointer;
+        }
+    }
+}
