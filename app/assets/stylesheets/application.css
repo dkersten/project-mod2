@@ -190,3 +190,174 @@ main.cart .checkout-container input[type="submit"]:hover {
     background: #e11c2b;
     cursor: pointer;
 }
+
+header.landing {
+    min-height: 85vh;
+    background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url("https://i.imgur.com/DfOC8KS.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+header.landing .inner-container {
+    margin-left: 10rem;
+}
+
+header.landing h1 {
+    font-size: 3.5rem;
+    color: #f7f7f7;
+    text-shadow: 0px 0px 5px rgba(0,0,0,.7);
+    margin-bottom: 1.5rem;
+}
+
+header.landing p {
+    font-size: 2rem;
+    color: #f7f7f7;
+    text-shadow: 0 0 5px #000;
+    margin-bottom: 1.5rem;
+}
+
+header.landing label {
+    display: none;
+}
+
+header.landing input[type="text"], header.landing input[type="email"], header.landing input[type="password"] {
+    background: rgba(0,0,0,.2);
+    border: 2px solid #f7f7f7;
+    min-height: 40px;
+    min-width: 175px;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 5px;
+}
+
+header.landing input[type="text"], header.landing input[type="email"], header.landing input[type="password"] {
+    font-size: 1.15rem;
+    color: #f7f7f7;
+    margin: .5rem 1rem;
+}
+
+header.landing ::placeholder {
+    font-size: 1.15rem;
+    color: #f7f7f7;
+    text-shadow: 1px 1px 3px #000;
+    margin: .5rem 1rem;
+}
+
+header.landing input[type="submit"] {
+    display: block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background: #e63946;
+    border-radius: 5px;
+    color: #f7f7f7;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    font-size: 1.25rem;
+    border: none;
+}
+
+header.landing input[type="submit"]:hover {
+    background: #e11c2b;
+    cursor: pointer;
+}
+
+header.landing .right {
+    background: red;
+}
+
+main.landing {
+    margin-top: 0;
+    position: relative;
+}
+
+main.landing .img-container {
+    position: absolute;
+    right: 0;
+    top: -8rem;
+}
+
+main.landing .content-container {
+    padding-top: 10rem;
+    font-size: 2.5rem;
+    color: #1d3557;
+    margin-bottom: 2rem;
+}
+
+main.landing .info-container {
+    display: flex;
+    flex-basis: calc(33.333% - 4rem);
+    margin-top: 2rem;
+    padding-bottom: 3rem;
+    justify-content: space-between;
+}
+
+main.landing .info-container p {
+    color: #707070;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+main.landing .content-container .info-container p:nth-child(2) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+main.landing img {
+    width: 400px;
+    height: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    box-shadow: 0 0 10px #000;
+}
+
+.sign-in-container {
+    background: linear-gradient(to bottom right, #0c1624, #1d3557);
+    padding: 8rem 0 ;
+    display: flex;
+    justify-content: center;
+}
+
+.sign-in-container label {
+    display: none;
+}
+
+.sign-in-container input[type="text"], .sign-in-container input[type="email"], .sign-in-container input[type="password"] {
+    background: rgba(0,0,0,.2);
+    border: 2px solid #f7f7f7;
+    min-height: 40px;
+    min-width: 250px;
+    margin-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 5px;
+}
+
+.sign-in-container input[type="text"], .sign-in-container input[type="email"], .sign-in-container input[type="password"] {
+    font-size: 1.15rem;
+    color: #f7f7f7;
+    margin: .5rem 1rem; 
+}
+
+.sign-in-container form ::placeholder {
+    font-size: 1.15rem;
+    color: #f7f7f7;
+    margin: .5rem 1rem; 
+}
+
+.sign-in-container input[type="submit"] {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background: #e63946;
+    border-radius: 5px;
+    color: #f7f7f7;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    font-size: 1.25rem;
+    border: none;
+}
+
+.sign-in-container input[type="submit"]:hover {
+    background: #e11c2b;
+    cursor: pointer;
+}

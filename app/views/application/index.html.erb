@@ -1,42 +1,62 @@
-<h1>Welcome to Tasty Tours</h1>
+<header class="landing">
 
-<% if flash[:errors] %>
-  <% flash[:errors].each do |error| %>
-    <span><%= error %></span>
+  <div class="left">
+  <div class="inner-container">
+    <h1>Welcome to Tasty Tours</h1>
+    <p>Give your tastebuds an adventure!</p>
+
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <span><%= error %></span>
+      <% end %>
+    <% end %>
+
+    <!-- Sign up form -->
+    <%= form_for @user do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: "Your Name" %>
+
+        <%= f.label :email %>
+        <%= f.email_field :email, placeholder: "Your Email" %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, placeholder: "Password" %>
+
+        <%= f.submit "Create an Account" %>
+
+    <% end %>
+  </div>
+  </div>
+  <div class="right">
+  </div>
+</header>
+<main class="landing">
+  <div class="content-container">
+    <h3>Plan Your Trip</h3>
+    <div class="info-container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porttitor tincidunt odio id laoreet. Maecenas quis libero ac magna porttitor vehicula. Aliquam viverra turpis et purus congue varius. Morbi suscipit imperdiet risus at elementum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porttitor tincidunt odio id laoreet. Maecenas quis libero ac magna porttitor vehicula. Aliquam viverra turpis et purus congue varius. Morbi suscipit imperdiet risus at elementum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porttitor tincidunt odio id laoreet. Maecenas quis libero ac magna porttitor vehicula. Aliquam viverra turpis et purus congue varius. Morbi suscipit imperdiet risus at elementum.</p>
+    </div>
+  </div>
+  <div class="img-container">
+    <img src="https://i.imgur.com/kT9LCtz.jpg" alt="A pasta dish you can learn to make in Italy">
+    <img src="https://i.imgur.com/Te0tE42.jpg" alt="Learn to bake bread in France">
+  </div>
+</main>
+<div id="signin-form" class="sign-in-container">
+  <% if flash[:err] %>
+      <span> <%= flash[:err] %> </span>
   <% end %>
-<% end %>
 
-<!-- Sign up form -->
-<%= form_for @user do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br><br>
+  <!-- Sign in form -->
+  <%= form_for :session, url: new_login_path do |f|  %>
+      <%= f.label :email %>
+      <%= f.email_field :email, placeholder: "Email" %>
 
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-    <br><br>
+      <%= f.label :password %>
+      <%= f.password_field :password, placeholder: "Password" %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br><br>
-
-    <%= f.submit %>
-
-<% end %>
-
-<% if flash[:err] %>
-    <span> <%= flash[:err] %> </span>
-<% end %>
-
-<!-- Sign in form -->
-<%= form_for :session, url: new_login_path do |f|  %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-    <br><br>
-
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br><br>
-
-    <%= f.submit "Login" %>
-<% end %>
+      <%= f.submit "Login" %>
+  <% end %>
+</div>

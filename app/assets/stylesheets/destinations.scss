@@ -47,7 +47,7 @@ main.index {
 
 main.show {
     
-    background-size: cover;
+    background-size: cover !important;
     max-width: 100%;
     width: 100%;
     margin-top: 0;
@@ -201,3 +201,9 @@ div#ImageGallery figure {
    font-size: 1.15rem;
   }
   
+  .destination-card-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      flex-basis: calc(33.333% - 2rem);
+  }

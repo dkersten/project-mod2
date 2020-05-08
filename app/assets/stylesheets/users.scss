@@ -18,6 +18,40 @@ main.user-show {
         color: #2f2f2f;
     }
 
+    a {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: #e63946;
+        margin: 1.5rem auto;
+        border-radius: 5px;
+        color: #f7f7f7;
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+        font-size: 1.25rem;
+
+        &:hover {
+            background: #e11c2b;
+            cursor: pointer;
+        }
+    }
+
+    input[type="submit"] {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: #0c1624;
+        margin: 1.5rem auto;
+        border-radius: 5px;
+        color: #f7f7f7;
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+        font-size: 1.25rem;
+
+        &:hover {
+            background: #1d3557;
+            cursor: pointer;
+        }
+    }
+
     .card-container {
         display: flex;
         flex-wrap: wrap;

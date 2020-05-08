@@ -1,4 +1,5 @@
 <main class="index">
+<div class="destination-card-container">
     <% @destinations.each do |destination| %>
         <div class="card">
             <img alt="<%= destination.city %>, <%= destination.country %>" src="<%= destination.img_url %>">
@@ -17,4 +18,5 @@
         </div>
         
     <% end %>
+    </div>
 </main>

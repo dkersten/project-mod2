@@ -6,13 +6,17 @@
   <h2>Your Trips:</h2>
 
 <div class="card-container">
-  <% @user.trips.each do |trip| %>
-    <div class="card">
-      <img src="<%= trip.destination.img_url %>" alt="<%= trip.destination.city %>, <%= trip.destination.country %>">
+  <% if @user.trips.length == 0 %>
+    <p style="margin: 3rem 0; text-align: center; font-size: 1.15rem; color: #2f2f2f;">You have no scheduled trips at this time.</p>
+  <% else %>
+    <% @user.trips.each do |trip| %>
+      <div class="card">
+        <img src="<%= trip.destination.img_url %>" alt="<%= trip.destination.city %>, <%= trip.destination.country %>">
 
-      <h3><%= trip.destination.city %>, <%= trip.destination.country %></h3>
-      <%= link_to "Trip Details", trip_path(trip) %>
-    </div>
+        <h3><%= trip.destination.city %>, <%= trip.destination.country %></h3>
+        <%= link_to "Trip Details", trip_path(trip) %>
+      </div>
+    <% end %>
   <% end %>
   </div>
   
